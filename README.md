@@ -3,6 +3,7 @@
 1. This project is tested in Ubuntu 20.04.3 LTS
 2. Python 3.8.10
 3. Nodejs 18.16.0
+4. Redis 6.0.16
 
 ##### Installation Guide
 1. Create a Directory
