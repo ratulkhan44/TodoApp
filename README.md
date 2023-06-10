@@ -50,6 +50,7 @@ npm install
 10. Run The Project
 ```bash
 npm run dev 
+```
 
 11. Open http://127.0.0.1:5173
 
@@ -69,13 +70,12 @@ npm run dev
 ```
 ```Sucecessful Response: ```
 ```
-```
 {
     "StatusCode": 200,
     "is_cached": false,
     "message": "Successfully Creted",
     "todo": {
-        "name": "this is anpther todo",
+        "name": "This is my todo",
         "status": false
     }
 }
