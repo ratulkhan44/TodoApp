@@ -19,9 +19,9 @@
                     <td v-if="todo.status">Completed</td>
                     <td v-else>Incomplete</td>
                     <td >
-                      <button type="button" class="btn btn-primary btn-sm mr-2" :disabled="todo.status">Complete</button>
+                      <button type="button" class="btn btn-primary btn-sm mr-2" :disabled="todo.status" @click="updateTodo(todo.id,todo.name)">Complete</button>
                       <!-- <button type="button" class="btn btn-primary btn-sm mr-2" v-else>Incomplete</button> -->
-                      <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                      <button type="button" class="btn btn-danger btn-sm" @click="deletTodo(todo.id)">Delete</button>
                     </td>
                   </tr>
                 </tbody>
@@ -110,7 +110,39 @@ export default {
       this.alertMessage = "Faild"
       console.log(e)
     })
-    }
+    },
+
+    deletTodo(id){
+      axios.delete(`http://127.0.0.1:5000/delete_todo/${id}`)
+      .then((result) => {
+      console.log(result);
+      this.getData()
+      this.alertMessage = "Deleted Successfully"
+     })
+     .catch(e => {
+      this.errors.push(e)
+      this.alertMessage = "Faild"
+      console.log(e)
+    })
+    },
+
+    updateTodo(id,name){
+      axios.put(`http://127.0.0.1:5000/update_todo/${id}`,{
+        "name":name,
+        "status":true
+      })
+      .then((result) => {
+      console.log(result);
+      this.getData()
+      this.alertMessage = "Update Successfully"
+     })
+     .catch(e => {
+      this.errors.push(e)
+      this.alertMessage = "Faild"
+      console.log(e)
+    })
+    },
+
   }
 }
 </script>

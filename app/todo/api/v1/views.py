@@ -118,6 +118,7 @@ def todo_list():
             return jsonify({"StatusCode": 400, "message": str(exp)})
     
 @api_views.route('/update_todo/<int:todo_id>',methods=['PUT'])
+@cross_origin(origin='*',headers=['Content-Type'])
 def update_todo(todo_id):
     if request.method == "PUT":
         try:
@@ -163,6 +164,7 @@ def update_todo(todo_id):
         
 
 @api_views.route('/delete_todo/<int:todo_id>',methods=['DELETE'])
+@cross_origin(origin='*',headers=['Content-Type'])
 def delete_todo(todo_id):
     if request.method == "DELETE":
         try:
