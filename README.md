@@ -33,26 +33,27 @@ cd app
 ```bash
 pip3 install -r requirements.txt
 ```
-6. Run main.py
+6. Create a .env file and copy all the things from sample.env and paste into .env file
+7. Run main.py
 ```bash
 python3 -m main.py
 ```
-7. Open http://127.0.0.1:5000
+8. Open http://127.0.0.1:5000
 
-8. Change Directory
+9. Change Directory
 ```bash
 cd app
 ```
-9. Install npm
+10. Install npm
 ```bash
 npm install
 ```
-10. Run The Project
+11. Run The Project
 ```bash
 npm run dev 
 ```
 
-11. Open http://127.0.0.1:5173
+12. Open http://127.0.0.1:5173
 
 
  ##### Api Details
